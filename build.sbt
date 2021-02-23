@@ -7,13 +7,19 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.13.3"
 
-libraryDependencies += guice
-libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
-libraryDependencies += "org.sangria-graphql" %% "sangria-play-json" % "2.0.1"
-libraryDependencies += "org.sangria-graphql" %% "sangria" % "2.0.1"
+libraryDependencies ++= Seq(
+  guice,
+  "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test,
+  "org.sangria-graphql" %% "sangria-play-json" % "2.0.1",
+  "org.sangria-graphql" %% "sangria" % "2.0.1",
 
-// Adds additional packages into Twirl
-//TwirlKeys.templateImports += "com.example.controllers._"
+  "org.webjars" %% "webjars-play" % "2.8.0-1",
+  "org.webjars" % "bootstrap" % "3.3.6",
+  "org.webjars.npm" % "react" % "17.0.1",
+  "org.webjars.npm" % "react-dom" % "17.0.1",
+  "org.webjars.npm" % "babel-standalone" % "6.26.0"
+)
 
-// Adds additional packages into conf/routes
-// play.sbt.routes.RoutesKeys.routesImport += "com.example.binders._"
+dependencyOverrides ++= Seq(
+  "org.webjars.npm" % "js-tokens" % "3.0.2"
+)
