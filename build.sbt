@@ -16,5 +16,5 @@ libraryDependencies ++= Seq(
   "org.webjars" % "bootstrap" % "3.3.6",
   "org.webjars.npm" % "react" % "17.0.1",
   "org.webjars.npm" % "react-dom" % "17.0.1",
-  "org.webjars.npm" % "babel-standalone" % "6.26.0"
+  "org.webjars.npm" % "babel-standalone" % "6.26.0",
 )
